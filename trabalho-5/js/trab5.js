@@ -13,490 +13,9 @@ var geometriaA;
 
 
 var objLoading = function(){
-	loader = new THREE.OBJLoader();
 	
 	let loaderFBX = new THREE.FBXLoader();
-	loaderFBX.load(
-		'assets/Sheep.fbx',
-		function(obj){
-			
-			elementos['Sheep 1'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/UVSheep.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.02;
-			 obj.scale.z = 0.02;
-			 obj.scale.x = 0.02;
-
-			obj.position.y = -7.6;
-			obj.position.x = +10;
-			obj.position.z = 0;
-
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	loaderFBX.load(
-		'assets/Bull.fbx',
-		function(obj){
-			
-			elementos['Bull 1'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/UV-Bull.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.02;
-			 obj.scale.z = 0.02;
-			 obj.scale.x = 0.02;
-
-			obj.position.y = -7.6;
-			obj.position.x = +30;
-			obj.position.z = +30;
-
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	loaderFBX.load(
-		'assets/Jaguar.fbx',
-		function(obj){
-			
-			elementos['Jaguar 1'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/Jaguar_texture.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.02;
-			 obj.scale.z = 0.02;
-			 obj.scale.x = 0.02;
-
-			obj.position.y = -7.6;
-			obj.position.x = -30;
-			obj.position.z = +30;
-
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	loaderFBX.load(
-		'assets/Sabertooth.fbx',
-		function(obj){
-			
-			elementos['Sabertooth 1'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/UV-Sabertooth.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.05;
-			 obj.scale.z = 0.05;
-			 obj.scale.x = 0.05;
-
-			obj.position.y = -7.6;
-			obj.position.x = +60;
-			obj.position.z = +60;
-
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	loaderFBX.load(
-		'assets/Bear.fbx',
-		function(obj){
-			
-			elementos['Bear 1'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/UV Bear.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.005;
-			 obj.scale.z = 0.005;
-			 obj.scale.x = 0.005;
-
-			obj.position.y = -7.6;
-			obj.position.x = -60;
-			obj.position.z = +60;
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	loaderFBX.load(
-		'assets/Elephant.fbx',
-		function(obj){
-			
-			elementos['Elephant 1'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/UV Elephant.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.008;
-			 obj.scale.z = 0.008;
-			 obj.scale.x = 0.008;
-
-			obj.position.y = -7.6;
-			obj.position.x = -100;
-			obj.position.z = 0;
-
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	loaderFBX.load(
-		'assets/Sheep.fbx',
-		function(obj){
-			
-			elementos['Sheep 2'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/UVSheep.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.02;
-			 obj.scale.z = 0.02;
-			 obj.scale.x = 0.02;
-
-			obj.position.y = -7.6;
-			obj.position.x = -60;
-			obj.position.z = 0;
-
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	loaderFBX.load(
-		'assets/Bull.fbx',
-		function(obj){
-			
-			elementos['Bull 2'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/UV-Bull.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.02;
-			 obj.scale.z = 0.02;
-			 obj.scale.x = 0.02;
-
-			obj.position.y = -7.6;
-			obj.position.x = -150;
-			obj.position.z = 30;
-
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	loaderFBX.load(
-		'assets/Jaguar.fbx',
-		function(obj){
-			
-			elementos['Jaguar 2'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/Jaguar_texture.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.02;
-			 obj.scale.z = 0.02;
-			 obj.scale.x = 0.02;
-
-			obj.position.y = -7.6;
-			obj.position.x = -10;
-			obj.position.z = 200;
-
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	loaderFBX.load(
-		'assets/Sabertooth.fbx',
-		function(obj){
-			
-			elementos['Sabertooth 2'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/UV-Sabertooth.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.05;
-			 obj.scale.z = 0.05;
-			 obj.scale.x = 0.05;
-
-			obj.position.y = -7.6;
-			obj.position.x = 150;
-			obj.position.z = -10;
-
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	loaderFBX.load(
-		'assets/Bear.fbx',
-		function(obj){
-			
-			elementos['Bear 2'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/UV Bear.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.005;
-			 obj.scale.z = 0.005;
-			 obj.scale.x = 0.005;
-
-			obj.position.y = -7.6;
-			obj.position.x = -100;
-			obj.position.z = +100;
-
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	loaderFBX.load(
-		'assets/Elephant.fbx',
-		function(obj){
-			
-			elementos['Elephant 2'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/UV Elephant.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.008;
-			 obj.scale.z = 0.008;
-			 obj.scale.x = 0.008;
-
-			obj.position.y = -7.6;
-			obj.position.x = -50;
-			obj.position.z = +100;
-
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	loaderFBX.load(
-		'assets/Bull.fbx',
-		function(obj){
-			
-			elementos['Bull 1'] = obj;
-
-			obj.traverse( function (child){
-					if (child instanceof THREE.Mesh){
-						child.material = new THREE.MeshStandardMaterial({
-							map: new THREE.TextureLoader().load("assets/texturas/UV-Bull.png")}
-						);
-					}
-				}
-			);
-
-			 obj.scale.y = 0.02;
-			 obj.scale.z = 0.02;
-			 obj.scale.x = 0.02;
-
-			obj.position.y = -7.6;
-			obj.position.x = +30;
-			obj.position.z = +30;
-
-			
-
-			scene.add(obj);
-
-		},
-		function(andamento){
-			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
-		},
-		function(error){
-			console.log(" Deu merda!: "+ error);
-		}
-	);
-
-	// const mtlLoader = new MTLLoader();
-	// mtlLoader.load('assets/Building1_Large.mtl',
-	// 	(materials) => {
-	// 		materials.preload();
-	// 		const objLoader = new OBJLoader();
-	// 		objLoader.setMaterials(materials);
-	// 		objLoader.load(
-	// 			'assets/Building1_Large.obj',
-	// 			(object) => scene.add(object),
-	// 			null,
-	// 			null
-	// 		);
-	// 	}
-	// 	)
+	
 	loaderFBX.load(
 		'assets/College_Building_001.fbx',
 		function(obj){
@@ -537,7 +56,7 @@ var objLoading = function(){
 		'assets/Police Car.fbx',
 		function(obj){
 			
-			elementos['Bull 4'] = obj;
+			elementos['car'] = obj;
 
 			obj.traverse( function (child){
 					if (child instanceof THREE.Mesh){
@@ -553,10 +72,10 @@ var objLoading = function(){
 			 obj.scale.x = 0.05;
 
 			obj.position.y = -3.2;
-			obj.position.x = -20;
+			obj.position.x = -4;
 			obj.position.z = 0;
 
-			obj.rotation.y+= 0.4;
+			obj.rotation.y+= 9.5;
 
 			scene.add(obj);
 
@@ -596,13 +115,13 @@ var createGui = function (){
 	};
 
 
-	let opcoes = ['Sheep 1', 'Sheep 2', 'Bull 1', 'Bull 2', 'Sabertooth 1', 'Sabertooth 2', 'Jaguar 1', 'Jaguar 2', 'Elephant 1', 'Elephant 2'];
-	let comboChange = gui.add(parametrosGUI, 'geometrias').options(opcoes).name("Objetos");
-	comboChange.onChange(function(parametro){
-			camera.lookAt(elementos[parametro].position);
-			parametrosGUI.modelGui = parametro;
-		}
-	);
+	// let opcoes = ['Sheep 1', 'Sheep 2', 'Bull 1', 'Bull 2', 'Sabertooth 1', 'Sabertooth 2', 'Elephant 1', 'Elephant 2'];
+	// let comboChange = gui.add(parametrosGUI, 'geometrias').options(opcoes).name("Objetos");
+	// comboChange.onChange(function(parametro){
+	// 		camera.lookAt(elementos[parametro].position);
+	// 		parametrosGUI.modelGui = parametro;
+	// 	}
+	// );
 
 
 	//gui.add(parametrosGUI, 'b').name("Variavel2");
@@ -663,10 +182,10 @@ var init = function (){
 
 
 
-	// document.addEventListener('keydown', apertouButao);
-	// document.addEventListener('keyup', soltouBotao);
+	//document.addEventListener('keydown', apertouButao);
+	document.addEventListener('keyup', soltouBotao);
 
-	// //metodos do mouser
+	//metodos do mouser
 	// document.addEventListener('mousewheel', onMouseWheel);
 	// document.addEventListener('mousemove', onMouseMove);
 	// document.addEventListener('mousedown', onMouseClick);
@@ -683,9 +202,12 @@ var soltouBotao = function(e){
 
 	if (e.keyCode == 82){ //r
 		key_r = false;
+		elementos['car'].position.z+=1;
+
 	}
 	if (e.keyCode == 32){ //espaço
 		key_space = false;
+		elementos['car'].position.z-=1;
 	}
 	if (e.keyCode == 81){ //espaço
 		key_q = false;
@@ -700,40 +222,8 @@ var velocidadePulo = 0.5;
 var altura = -1;
 var animation = function (){
 	requestAnimationFrame(animation); //adiciona o método na fila de renderização
-
-	if (key_space){ //movimento frente
-		if (elementos["puppet"]["pivotOmbroD"].rotation.x < -2.83 || elementos["puppet"]["pivotOmbroD"].rotation.x > 1.3)
-			velocidadeOmbroDireitoC*=-1;
-
-		elementos["puppet"]["pivotOmbroD"].rotation.x += velocidadeOmbroDireitoC;
-	}
-	if (key_r){
-		if (elementos["puppet"]["pivotOmbroD"].rotation.z < 0 || elementos["puppet"]["pivotOmbroD"].rotation.z > 1.4)
-			velocidadeOmbroDireitoL*=-1;
-
-		elementos["puppet"]["pivotOmbroD"].rotation.z += velocidadeOmbroDireitoL;
-	}
-	if (key_q){
-		elementos["puppet"]["tronco"].rotation.y += 0.01;
-	}
-
-	if (pulando && ++count >= 30 ){
-		
-		if (altura == -1) altura = elementos['puppet']['tronco'].position.y;
-		if (elementos['puppet']['tronco'].position.y >= altura && elementos['puppet']['tronco'].position.y <= altura+3){
-			//console.log("-> "+ elementos['puppet']['tronco'].position.y);
-			elementos['puppet']['tronco'].position.y+=velocidadePulo;
-			if (elementos['puppet']['tronco'].position.y <= altura){
-				elementos['puppet']['tronco'].position.y = altura;
-				pulando = false;
-			}
-		} else{
-			elementos['puppet']['tronco'].position.y-=velocidadePulo; 	
-			velocidadePulo *=-1;
-		}
-		count =0;
-	}
-
+	if(elementos['car']!=null)
+		elementos['car'].position.z-=1;
 	renderer.render(scene, camera); //tira uma foto do estado e mostra na tela
 }
 
