@@ -35,6 +35,7 @@ let loaderFBX = new THREE.FBXLoader();
 						map: new THREE.TextureLoader().load("assets/texturas/UVastronaut.png")
 
 						})
+						child.castShadow = true
 					}
 				}
 			);
@@ -129,9 +130,16 @@ var ambientLightOn = function(){
 
 var directionalLigthOn = function(){
 	let light = new THREE.DirectionalLight(0xffffff, 1);
+	light.castShadow = true;
+	light.shadow.mapSize.width = 4096;//define os pixeis da sombra, quanto mais pixeis mais qualidade
+	light.shadow.mapSize.height = 4096;
+	light.shadow.camera.left = 1000
+	light.shadow.camera.bottom = 1000;
+	light.shadow.camera.right = -1000
+	light.shadow.camera.top = -1000;
 
-	light.position.y = 100;
-
+	light.position.y = 200;
+	light.position.x = 100;
 	light.target = ground;
 
 
@@ -167,6 +175,7 @@ var init = function (){
 
 
 	renderer = new THREE.WebGLRenderer();
+	renderer.shadowMap.enable = true;
 	renderer.setSize(window.innerWidth, window.innerHeight);
 	document.body.appendChild(renderer.domElement);
 
@@ -201,6 +210,7 @@ var init = function (){
 		new THREE.PlaneBufferGeometry(1000,1000),
 		materialGround
 	);
+	ground.receiveShadow = true;
 	ground.rotation.x = - Math.PI/2;
 	ground.position.y-=7.5;
 	scene.add(ground);
