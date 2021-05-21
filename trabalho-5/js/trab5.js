@@ -39,10 +39,10 @@ var objLoading = function(){
 			obj.position.x = -20;
 			obj.position.z = 0;
 
-			
+			obj.rotation.y= 1.65;
 
 			scene.add(obj);
-
+			camera.lookAt(obj.position);
 		},
 		function(andamento){
 			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
@@ -151,6 +151,10 @@ var init = function (){
 	camera.position.z = 50;
 	camera.position.x = 0;
 	camera.position.y = 1.7;
+
+	// camera.position.z = 100;
+	// camera.position.x = 100;
+	 camera.position.y = 30.7;
 	
 	godSaysLightsOn();
 
@@ -194,26 +198,6 @@ var init = function (){
 	
 };
 
-var key_r = false;
-var key_space = false;
-var key_q = false;
-
-var soltouBotao = function(e){
-
-	if (e.keyCode == 82){ //r
-		key_r = false;
-		elementos['car'].position.z+=1;
-
-	}
-	if (e.keyCode == 32){ //espaço
-		key_space = false;
-		elementos['car'].position.z-=1;
-	}
-	if (e.keyCode == 81){ //espaço
-		key_q = false;
-	}
-}
-
 var count =0; 
 var velocidadeOmbroDireitoC = -0.01;
 var velocidadeOmbroDireitoL = -0.01;
@@ -223,7 +207,7 @@ var altura = -1;
 var animation = function (){
 	requestAnimationFrame(animation); //adiciona o método na fila de renderização
 	if(elementos['car']!=null)
-		elementos['car'].position.z-=1;
+		//elementos['car'].position.z-=1; aqui
 	renderer.render(scene, camera); //tira uma foto do estado e mostra na tela
 }
 
