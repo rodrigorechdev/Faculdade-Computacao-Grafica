@@ -533,6 +533,41 @@ var objLoading = function(){
 		}
 	);
 
+	loaderFBX.load(
+		'assets/Police Car.fbx',
+		function(obj){
+			
+			elementos['Bull 4'] = obj;
+
+			obj.traverse( function (child){
+					if (child instanceof THREE.Mesh){
+						child.material = new THREE.MeshStandardMaterial({
+							map: new THREE.TextureLoader().load("assets/UVPoliceCar.png")}
+						);
+					}
+				}
+			);
+
+			 obj.scale.y = 0.05;
+			 obj.scale.z = 0.05;
+			 obj.scale.x = 0.05;
+
+			obj.position.y = -3.2;
+			obj.position.x = -20;
+			obj.position.z = 0;
+
+			obj.rotation.y+= 0.4;
+
+			scene.add(obj);
+
+		},
+		function(andamento){
+			console.log("Carregou: " + (andamento.loaded / andamento.total)*100 + " %" );
+		},
+		function(error){
+			console.log(" Deu merda!: "+ error);
+		}
+	);
 };
 
 var godSaysLightsOn = function (){
